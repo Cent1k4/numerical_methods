@@ -33,21 +33,40 @@ int main() {
     print_table(n, h, x, u, y1, "Implementation 1 (with bands)", ms1);
     print_table(n, h, x, u, y2, "Implementation 2 (no bands)", ms2);
 
-    std::cout << "k = ";
-    std::cin >> k;
+    int k1;
+    std::cout << "k1 = ";
+    std::cin >> k1;
 
-    if (k < 1) {
+    if (k1 < 1) {
         std::cout << "k должно быть >= 1\n";
         return 1;
     }
 
-    std::vector<int> ns;
-    int  val = 10;
-    for (int s = 0; s < k; ++s) {
-        ns.push_back(static_cast<int>(val));
-        val *= 10;
+    std::vector<int> ns1;
+    int  val1 = 10;
+    for (int s = 0; s < k1; ++s) {
+        ns1.push_back(static_cast<int>(val1));
+        val1 *= 10;
     }
 
-    run_experiment(ns);
+    run_experiment(ns1);
+
+    int k2;
+    std::cout << "\nk2 = ";
+    std::cin >> k2;
+
+    if (k2 < 1) {
+        std::cout << "k должно быть >= 1\n";
+        return 1;
+    }
+
+    std::vector<int> ns2;
+    int  val2 = 2;
+    for (int s = 0; s < k2; ++s) {
+        ns2.push_back(static_cast<int>(val2));
+        val2 *= 2;
+    }
+
+    run_experiment(ns2);
     return 0;
 }

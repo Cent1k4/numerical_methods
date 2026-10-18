@@ -1,7 +1,6 @@
 #include "solvers.h"
 
-std::vector<double> solve_bands(int n, double h,
-    const std::vector<double>& x) {
+std::vector<double> solve_bands(int n, double h, const std::vector<double>& x) {
     std::vector<double> A(n + 1), B(n + 1), C(n + 1), psi(n + 1);
 
     for (int i = 1; i <= n - 1; ++i) {
@@ -30,8 +29,7 @@ std::vector<double> solve_bands(int n, double h,
 }
 
 
-std::vector<double> solve_nobands(int n, double h,
-    const std::vector<double>& x) {
+std::vector<double> solve_nobands(int n, double h, const std::vector<double>& x) {
     double A = 12.0 / (h * h);
     double C = 24.0 / (h * h) + 5.0;
     double B = 12.0 / (h * h);

@@ -16,18 +16,15 @@ void print_table(int n, double h, const std::vector<double>& x, const std::vecto
     double C = 24.0 / (h * h) + 5.0;
     double B = 12.0 / (h * h);
 
-    double maxDiff = 0.0, maxRes = 0.0;
 
     for (int i = 0; i <= n; ++i) {
         double diff = u[i] - y[i];
-        maxDiff = std::max(maxDiff, std::fabs(diff));
 
         double res = 0.0;
         bool hasRes = (i >= 1 && i <= n - 1);
         if (hasRes) {
             double psi = 450.0 * x[i] * x[i] - 2110.0;
             res = A * y[i - 1] - C * y[i] + B * y[i + 1] + psi;
-            maxRes = std::max(maxRes, std::fabs(res));
         }
 
         std::cout << std::setw(6) << i
